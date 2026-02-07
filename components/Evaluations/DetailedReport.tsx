@@ -115,7 +115,8 @@ const DetailedReport: React.FC<DetailedReportProps> = ({ category, testCases }) 
         </div>
         
         <div className="divide-y divide-gray-50">
-          {filteredAndSortedCases.length > 0 ? filteredAndSortedCases.map((test) => (
+          {filteredAndSortedCases.length > 0 ? (
+            filteredAndSortedCases.map((test) => (
             <div key={test.id} className="group">
               <div 
                 onClick={() => setExpandedId(expandedId === test.id ? null : test.id)}
@@ -191,6 +192,7 @@ const DetailedReport: React.FC<DetailedReportProps> = ({ category, testCases }) 
                 </div>
               )}
             </div>
+            ))
           ) : (
             <div className="py-20 text-center">
               <Info className="w-12 h-12 text-gray-100 mx-auto mb-4" />
